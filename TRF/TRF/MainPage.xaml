@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRF.MainPage">
+
+    
+        <ScrollView>
+        <StackLayout BackgroundColor="#40445D">
+            <Label FontSize="30" HorizontalOptions="Center" TextColor="#fff" Margin="0,13,0,0">TRABAJO FINAL</Label>
+            <Label FontSize="20" HorizontalOptions="Center" TextColor="#fff" Margin="0,3,0,0">CRUD de artefactos de computo</Label>
+            <Label FontSize="12" HorizontalOptions="Center" TextColor="#fff" Margin="0,0,0,0">INFANTE ARCE YON GERLI</Label>
+            <Button Margin="45,42,45,12" FontSize="20" TextColor="#D5D6E0" BackgroundColor="#282B3E" Text="LISTAR PRODUTOS" Clicked="Listar"></Button>
+            </StackLayout>
+            
+        </ScrollView>
+       
+   
+
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRF.View.ProductosPage">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Margin="15,10,15,10">
+                <Label Text="{Binding Id}"></Label>
+                <Label  Text="Nombre"></Label>
+                <Entry Text="{Binding Nombre}"></Entry>
+                <Label Text="Descripcion"></Label>
+                <Entry Text="{Binding Descripcion}"></Entry>
+                <Label  Text="Precio"></Label>
+                <Entry Keyboard="Numeric" Text="{Binding Price}"></Entry>
+
+                <Button Text="GUARDAR" Command="{Binding GuardarCommand}"></Button>
+                <Button Text="MODIFICAR" Command="{Binding ModificarCommand}"></Button>
+                <Button Text="ELIMINAR" Command="{Binding EliminarCommand}"></Button>
+                <Button Text="LIMPIAR" Command="{Binding LimpiarCommand}"></Button>
+            </StackLayout>
+            
+
+            
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>
+
+            <Label FontSize="20"   HorizontalOptions="Center" TextColor="#313245"   Text="Lista de Productos"></Label>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Margin="0,0,0,0" TextColor="#000" FontSize="16"  Grid.Column="1" Text="NOMBRE PRODUCTO" FontAttributes="Bold"/>
+                <Label Margin="0,0,0,0" TextColor="#000" FontSize="16" Grid.Row="0" Grid.Column="2" Text="DESCRIPCION"  FontAttributes="Bold"/>
+                <Label Margin="0,0,0,0" TextColor="#000" FontSize="16" Grid.Row="0" Grid.Column="3" Text="PRECIO" FontAttributes="Bold"/>
+            </Grid>
+
+            <ListView Margin="5,0,5,5"  BackgroundColor="#3E3F4E" x:Name="LvProductos" ItemsSource="{Binding Producto}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid  >
+
+                                <StackLayout  BackgroundColor="#212F3D ">
+                                    <Grid Padding="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+ 
+                                        <Label Margin="10,0,0,0" TextColor="#fff" FontSize="20" Grid.Column="1" Text="{Binding Nombre}" FontAttributes="Bold"/>
+                                        <Label  Margin="10,0,0,0" TextColor="#fff" FontSize="16"  Grid.Column="2" Text="{Binding Descripcion}" VerticalOptions="End"/>
+                                        <Label Margin="10,0,0,0" TextColor="#fff" FontSize="20" Grid.Column="3" Text="{Binding Price}" VerticalOptions="End"/>
+                                        
+                                    </Grid>
+                                </StackLayout>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
